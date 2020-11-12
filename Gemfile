@@ -39,6 +39,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Springを用いてアプリの起動時間を高速化
   gem 'spring-commands-rspec'
+
+  # rubocop
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

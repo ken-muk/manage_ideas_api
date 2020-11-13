@@ -7,25 +7,25 @@ RSpec.describe Category, type: :model do
 
   describe "Category" do
     describe "バリデーションチェック" do
-      it "titleが設定されていればOK" do
+      it "nameが設定されていればOK" do
         expect(category.valid?).to eq(true)
       end
 
-      it "titleが空文字だとNG" do
-        category.title = ""
+      it "nameが空文字だとNG" do
+        category.name = ""
         expect(category.valid?).to eq(false)
       end
 
-      it "titleがnilだとNG" do
-        category.title = nil
+      it "nameがnilだとNG" do
+        category.name = nil
         expect(category.valid?).to eq(false)
       end
     end
 
     describe "ユニーク制約チェック" do
-      it "titleが一意であることを確認" do
-        category = Category.create(title: "test")
-        dup_category = Category.create(title: category.title)
+      it "nameが一意であることを確認" do
+        category = Category.create(name: "test")
+        dup_category = Category.create(name: category.name)
         expect(dup_category).not_to be_valid
       end
     end

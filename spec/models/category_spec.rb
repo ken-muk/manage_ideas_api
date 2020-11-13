@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Category, type: :model do
-  let(:category) { build(:category) }
+  let(:category) { create(:category) }
 
   describe "Category" do
     describe "バリデーションチェック" do

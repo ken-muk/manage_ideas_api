@@ -1,0 +1,6 @@
+FactoryBot.define do
+  factory :idea do
+    association :category
+    sequence(:body) { |n| "body#{n}" }
+  end
+end

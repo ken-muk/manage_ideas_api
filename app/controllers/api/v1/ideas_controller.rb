@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class IdeasController < ApplicationController
@@ -16,9 +18,9 @@ module Api
       end
 
       private
-      def idea_params
-        params.permit(:body, :category_id)
-      end
+        def idea_params
+          params.permit(:body, :category_id)
+        end
     end
   end
 end

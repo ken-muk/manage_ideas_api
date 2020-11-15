@@ -47,6 +47,8 @@ group :development do
   gem "rubocop-packaging", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
+
+  gem "bullet"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

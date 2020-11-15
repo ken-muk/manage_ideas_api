@@ -1,24 +1,29 @@
-# README
+# ManageIdeasAPI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+カテゴリーに基づくアイデアを管理するAPI  
 
-Things you may want to cover:
+## バージョン
+Ruby→2.7.0  
+RubyOnRails→6.0.3  
 
-* Ruby version
+## 機能
+### アイデア追加
+カテゴリーとアイデアの内容を指定して、アイデアリストに追加する。
 
-* System dependencies
+**リクエスト**
+* category_name(カテゴリー):string null: false
+* body(アイデアの内容):string null: false
 
-* Configuration
+**レスポンス**
+* 成功時→ステータスコード201を返却
+* 失敗時→ステータスコード422を返却
 
-* Database creation
+### アイデア取得
+アイデアリストから、カテゴリーに合致するアイデア一覧を取得する。（カテゴリーを゙指定しない場合は、全てのideasを取得）
 
-* Database initialization
+**リクエスト**
+* category_name(カテゴリー):string
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**レスポンス**
+* 成功時→「アイデアのid、カテゴリー名, アイデアの内容」を返却
+* 失敗時（指定されたカテゴリーが存在しない場合）→ステータスコード404を返却
